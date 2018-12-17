@@ -11,25 +11,25 @@ I didn't see a simplistic solution so I wrote one.
 
 ## Current Features (the manifesto)
 
-*Generate a list from all the citations found within the article.
-*Detect multiple instances of the same source.
-*Number each `<cite>` instance, if used before, use the previous instance's number.
-*Uses anchor tags to link to the source at the bottom of the page to a specificatied div
-*No jQuery
-*Very easy to use
+* Generate a list from all the citations found within the article.
+* Detect multiple instances of the same source.
+* Number each `<cite>` instance, if used before, use the previous instance's number.
+* Uses anchor tags to link to the source at the bottom of the page to a specificatied div
+* No jQuery
+* Very easy to use
   
 ## Planned Features
 
-*Code fixes
-*Arguments passed in as object for better configuration
-*Demo files
-*ES5 & ES6 variants
-*Source Name (optional)
-*Date Retrieved vs Article Date published
-*Repository contains minified distribution ready code
-*Multiple citiation lists on the same page (multi-article support)
-*Optional demo Scss/CSS stylings 
-*generate as an ordered list instead of html
+* Code fixes
+* Arguments passed in as object for better configuration
+* Demo files
+* ES5 & ES6 variants
+* Source Name (optional)
+* Date Retrieved vs Article Date published
+* Repository contains minified distribution ready code
+* Multiple citiation lists on the same page (multi-article support)
+* Optional demo Scss/CSS stylings 
+* Generate as an ordered list instead of html
 
 ## Maybe features
 
