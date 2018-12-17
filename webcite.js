@@ -8,8 +8,6 @@ let citer = {
 	},
 	createArray: () => {
 		const cites = document.querySelectorAll("cite");
-		//console.log("createArray cites")
-		//console.log(cites)
 		cites.forEach( (cite) => { //fat arrow make jQuery this goof
 			let newObj = {
 				date :  cite.dataset.date,
@@ -31,7 +29,6 @@ let citer = {
 		citeArray.forEach( (instance)  => {
 			const subcite = `<a href="#cite${instance.i}">${instance.i}</a>`;
 			const citation = `<span><a href="${instance.source}" id="cite${instance.i}">${instance.i} ${instance.title}</a> ${instance.date}</span>`
-			//console.log(`citation: ${citation}`)
 			compiledList = compiledList + citation;
 			document.querySelectorAll(`[data-source="${instance.source}"]`).forEach( (cite)=> { //queryAll creates an array
 				cite.insertAdjacentHTML('beforeend', subcite);
