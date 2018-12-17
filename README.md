@@ -21,6 +21,7 @@ I didn't see a simplistic solution so I wrote one.
 ## Planned Features
 
 * Code fixes
+* MORE DOCUMENTATION!
 * Arguments passed in as object for better configuration
 * Demo files
 * ES5 & ES6 variants
@@ -33,9 +34,10 @@ I didn't see a simplistic solution so I wrote one.
 
 ## Maybe features
 
-*Auto-Initalization (Just link/bundle the JS and script auto inits with defaults)
-*Hover support
-*Non-Web citations
+* Auto-Initalization (Just link/bundle the JS and script auto inits with defaults)
+* Hover support
+* Non-Web citations
+* Custom Domain?
 
 
 ## Usage
