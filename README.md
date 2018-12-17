@@ -20,17 +20,20 @@ I didn't see a simplistic solution so I wrote one.
   
 ## Planned Features
 
-* Code fixes
+* Code fixes and some basic error checking
 * MORE DOCUMENTATION!
 * Arguments passed in as object for better configuration
 * Demo files
 * ES5 & ES6 variants
-* Source Name (optional)
+* Source Title (optional)
+* Date Retreived (optional)
+* Author (optional)
+* CSS attributes for each property so lists can easily customized
 * Date Retrieved vs Article Date published
 * Repository contains minified distribution ready code
 * Multiple citiation lists on the same page (multi-article support)
 * Optional demo Scss/CSS stylings 
-* Generate as an ordered list instead of html
+* Generate as an ordered list instead of spans
 
 ## Maybe features
 
