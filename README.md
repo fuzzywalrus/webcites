@@ -3,18 +3,18 @@ a dependency free, ultra-lightweight, easy to use javascript citation list creat
 
 ## Why?
 
-This project started out while writing an article for a company blog using web sites as sources. HTML5 (now just ol' HTML) spec includes the `<cite>` tag but it's not very useful as a list of references/citations becomes pretty unwildly as one edits an article. This brings sanity as each citation can be posted at the point in the article includes. 
+This project started out while writing an article for a company blog using web sites as sources. HTML5 (now just ol' HTML) spec includes the `<cite>` tag but it's not very useful as a list of references/citations becomes pretty unwieldy as one edits an article. This brings sanity as each citation can be posted at the point in the article includes. 
 
-When I glanced at other libraries, they were capable of doing full bibliographical citations in the various academic formats like AMA, Chicago, JM  and so on, like citeproc-js, or requiring additional JSON to be included, all powerful and useful but wanton overkill for my meager needs of my employer's blog and my own personal blog.
+When I glanced at other libraries, they were capable of doing full bibliographical citations in the various academic formats like AMA, Chicago, JM  and so on, like citeproc-js, or requiring additional JSON to be included, all-powerful and useful but wanton overkill for my meager needs of my employer's blog and my own personal blog.
 
-I didn't see a simplistic solution so I wrote one.
+I didn't see a simple solution, so I wrote one.
 
 ## Current Features (the manifesto)
 
 * Generate a list from all the citations found within the article.
 * Detect multiple instances of the same source.
 * Number each `<cite>` instance, if used before, use the previous instance's number.
-* Uses anchor tags to link to the source at the bottom of the page to a specificatied div
+* Uses anchor tags to link to the source at the bottom of the page to a specified div
 * No jQuery
 * Very easy to use
   
@@ -26,20 +26,20 @@ I didn't see a simplistic solution so I wrote one.
 * ES5 & ES6 variants
 * Author (optional)
 * Repository contains minified distribution ready code
-* Multiple citiation lists on the same page (multi-article support)
+* Multiple citation lists on the same page (multi-article support)
 * Optional demo Scss/CSS stylings 
 * Generate as an ordered list instead of spans
 
 ## completed
 * ~~Source Title (optional)~~
-* ~~Date Retreived (optional)~~
-* ~~Arguments passed in as object for better configuration~~
-* ~~CSS attributes for each property so lists can easily customized~~
+* ~~Date Retrieved (optional)~~
+* ~~Arguments passed in an object for better configuration~~
+* ~~CSS attributes for each property so lists can easily be customized~~
 * ~~Date Retrieved vs Article Date published~~
 
 ## Maybe features
 
-* Auto-Initalization (Just link/bundle the JS and script auto inits with defaults)
+* Auto-Initializing (Just link/bundle the JS and script auto inits with defaults)
 * Hover support
 * Non-Web citations
 * Custom Domain?
@@ -74,9 +74,9 @@ Currently, webcites requires the script to be initialized.
 
 
 #### target 
-Accepts a string, used for the citiation list. 
+Accepts a string, used for the citation list. 
 
-By default looks for a div with the id tag of `#citations`. To change the the target you need to pass in an object:
+By default looks for a div with the id tag of `#citations`. To change the target you need to pass in an object:
 
 ```
 citer.init({
