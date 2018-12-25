@@ -31,11 +31,11 @@ I didn't see a simplistic solution so I wrote one.
 * Generate as an ordered list instead of spans
 
 ## completed
-* Source Title (optional)
-* Date Retreived (optional)
-* Arguments passed in as object for better configuration
-* CSS attributes for each property so lists can easily customized
-* Date Retrieved vs Article Date published
+* ~~Source Title (optional)~~
+* ~~Date Retreived (optional)~~
+* ~~Arguments passed in as object for better configuration~~
+* ~~CSS attributes for each property so lists can easily customized~~
+* ~~Date Retrieved vs Article Date published~~
 
 ## Maybe features
 
