@@ -1,0 +1,39 @@
+#content {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3em;
+  padding-left: 1em;
+  padding-right: 1em; }
+
+html {
+  background-color: #222;
+  color: #eee;
+  font-family: 'Noto Serif SC', serif;
+  line-height: 1.4em;
+  padding-bottom: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+  html a {
+    color: orange; }
+
+.citicon {
+  text-decoration: none;
+  font-size: 80%;
+  padding-left: 3px; }
+
+h1 {
+  line-height: 1.0em; }
+
+cite {
+  font-size: 11px;
+  padding-right: 3px; }
+
+#citations {
+  font-size: 11px;
+  margin-top: 2em; }
+  #citations span {
+    padding-right: 1em; }
+
+code {
+  color: lightgreen; }

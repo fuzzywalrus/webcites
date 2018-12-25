@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="webltcite">Web&lt;cite&gt;</h1>
+
+<p>a dependency free, ultra-lightweight, easy to use javascript citation list creator, inspired by Wikipedia.</p>
+
+<h2 id="why">Why?</h2>
+
+<p>This project started out while writing an article for a company blog using web sites as sources. HTML5 (now just ol' HTML) spec includes the <code>&lt;cite&gt;</code> tag but it&#8217;s not very useful as a list of references/citations becomes pretty unwieldy as one edits an article. This brings sanity as each citation can be posted at the point in the article includes.</p>
+
+<p>When I glanced at other libraries, they were capable of doing full bibliographical citations in the various academic formats like AMA, Chicago, JM and so on, like citeproc-js, or requiring additional JSON to be included, all-powerful and useful but wanton overkill for my meager needs of my employer&#8217;s blog and my own personal blog.</p>
+
+<p>I didn&#8217;t see a simple solution, so I wrote one. Currently is under 2kb.</p>
+
+<h2 id="currentfeaturesthemanifesto">Current Features (the manifesto)</h2>
+
+<ul>
+<li>Generate a list from all the citations found within the article.</li>
+<li>Detect multiple instances of the same source.</li>
+<li>Number each <code>&lt;cite&gt;</code> instance, if used before, use the previous instance&#8217;s number.</li>
+<li>Uses anchor tags to link to the source at the bottom of the page to a specified div</li>
+<li>No jQuery</li>
+<li>Very easy to use</li>
+</ul>
+
+<h2 id="plannedfeatures">Planned Features</h2>
+
+<ul>
+<li>Code fixes and some basic error checking</li>
+<li>MORE DOCUMENTATION!</li>
+<li>Demo files</li>
+<li>Author (optional)</li>
+<li>Repository contains minified distribution ready code</li>
+<li>Multiple citation lists on the same page (multi-article support)</li>
+<li>Optional demo Scss/CSS stylings</li>
+<li>Generate as an ordered list instead of spans</li>
+</ul>
+
+<h2 id="completed">Completed</h2>
+
+<ul>
+<li>~~Source Title (optional)~~</li>
+<li>~~Date Retrieved (optional)~~</li>
+<li>~~Arguments passed in an object for better configuration~~</li>
+<li>~~CSS attributes for each property so lists can easily be customized~~</li>
+<li>~~Date Retrieved vs Article Date published~~</li>
+<li>~~ES5 &amp; ES6 variants~~</li>
+</ul>
+
+<h2 id="maybefeatures">Maybe features</h2>
+
+<ul>
+<li>Auto-Initializing (Just link/bundle the JS and script auto inits with defaults)</li>
+<li>Hover support</li>
+<li>Non-Web citations</li>
+<li>Custom Domain?</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>Currently, the JS file can be linked or bundled with your current JS. The ES5 transpiled version can be found in the dist folder.</p>
+
+<p>Citations use with multiple data values:</p>
+
+<p><code>&lt;cite data-source=&quot;&quot;data-title=&quot;&quot;&gt;&lt;/cite&gt;</code></p>
+
+<p><strong>source:</strong> This is the URL and is <strong>required</strong>.</p>
+
+<p><strong>title:</strong> This is the name that article is <strong>required</strong></p>
+
+<p><strong>date:</strong> Optional (accepts string)</p>
+
+<p><strong>sourcename:</strong> Optional (accepts string)</p>
+
+<p><strong>dateretreived:</strong> Optional (accepts string)</p>
+
+<h3 id="exampleoffilledouttag">Example of filled out tag</h3>
+
+<p><code>&lt;cite data-source=&quot;https://www.cnet.com/news/netscape-cuts-prices-on-retail-products&quot; data-date=&quot;01/30/98&quot; data-title=&quot; Netscape cuts prices on retail products&quot; data-sourcename=&quot;Cnet.com&quot; data-dateretrieved=&quot;11/01/18&quot;&gt;&lt;/cite&gt;</code></p>
+
+<h3 id="initializingthescript">Initializing the Script</h3>
+
+<p>Currently, webcites requires the script to be initialized.</p>
+
+<p><code>citer.init();</code></p>
+
+<h3 id="configuration">Configuration</h3>
+
+<h4 id="target">target</h4>
+
+<p>Accepts a string, used for the citation list.</p>
+
+<p>By default looks for a div with the id tag of <code>#citations</code>. To change the target you need to pass in an object:</p>
+
+<pre><code>citer.init({
+  target: &quot;.mydestination&quot;
+});
+</code></pre>
+
+<h4 id="citicon">citicon</h4>
+
+<p>Accepts a string, can use HTML or a Unicode/HTML code</p>
+
+<p>The default link uses a triangle ▲ (html code &#9650;) but this can be switched to your own HTML or another unicode:</p>
+
+<p>Example:</p>
+
+<pre><code>citer.init({
+  target: &quot;.mydestination&quot;,
+  citicon: &quot;&lt;img src='/src/myicon.png'&gt;&quot;
+});
+</code></pre>
+
+<h3 id="demo">Demo</h3>
+
+<p>https://codepen.io/fuzzywalrus/pen/eee9dbfc406593977d67ce0562b70950</p>
+
+</body>
+</html>
+
