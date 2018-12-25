@@ -22,18 +22,20 @@ I didn't see a simplistic solution so I wrote one.
 
 * Code fixes and some basic error checking
 * MORE DOCUMENTATION!
-* Arguments passed in as object for better configuration
 * Demo files
 * ES5 & ES6 variants
-* Source Title (optional)
-* Date Retreived (optional)
 * Author (optional)
-* CSS attributes for each property so lists can easily customized
-* Date Retrieved vs Article Date published
 * Repository contains minified distribution ready code
 * Multiple citiation lists on the same page (multi-article support)
 * Optional demo Scss/CSS stylings 
 * Generate as an ordered list instead of spans
+
+## completed
+* Source Title (optional)
+* Date Retreived (optional)
+* Arguments passed in as object for better configuration
+* CSS attributes for each property so lists can easily customized
+* Date Retrieved vs Article Date published
 
 ## Maybe features
 
@@ -47,23 +49,57 @@ I didn't see a simplistic solution so I wrote one.
 
 Currently, the JS file can be linked or bundled with your current JS.  
 
-Citations use  with three data values:
+Citations use  with multiple data values:
 
-`<cite data-source="" data-date="" data-title=""></cite>`
+`<cite data-source=""data-title=""></cite>`
 
-**Source:** This is the URL and is required.
-**Title:** This is the name that article
-**Date:** Optional (accepts whatever format you prefer)
+**source:** This is the URL and is **required**.
+**title:** This is the name that article is **required**
+**date:** Optional (accepts string)
+**sourcename:** Optional (accepts string)
+**dateretreived:**  Optional (accepts string)a
 
-### Example of filed out tag
 
-`<cite data-source="https://www.cnet.com/news/netscape-cuts-prices-on-retail-products" data-date="01/30/98" data-title="Cnet - Netscape cuts prices on retail products"></cite>`
+### Example of filled out tag
+
+`<cite data-source="https://www.cnet.com/news/netscape-cuts-prices-on-retail-products" data-date="01/30/98" data-title=" Netscape cuts prices on retail products" data-sourcename="Cnet.com" data-dateretrieved="11/01/18"></cite>`
 
 ### Initializing the Script
 
-Currently, webcites requires the script to be initialized and a destiation target for the generated citations to be listed in. The init script currently only accepts a single argument (soon to change).
+Currently, webcites requires the script to be initialized.
 
-`citer.init("#citations");`
+`citer.init();`
+
+### Configuration
+
+
+#### target 
+Accepts a string, used for the citiation list. 
+
+By default looks for a div with the id tag of `#citations`. To change the the target you need to pass in an object:
+
+```
+citer.init({
+  target: ".mydestination"
+}); 
+```
+
+
+
+####  citicon 
+Accepts a string, can use HTML or a Unicode/HTML code  
+
+The default link uses a triangle ▲ (html code &#9650;) but this can be switched to your own HTML or another unicode:
+
+Example:
+
+```
+citer.init({
+  target: ".mydestination",
+  citicon: "<img src='/src/myicon.png'>"
+}); 
+```
+
 
 ### Demo
 
