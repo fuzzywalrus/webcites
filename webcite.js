@@ -1,57 +1,71 @@
-let i = 0; // set the counter's starting point
+let citeCount = 0; // set the citeCounter's starting point
 let citeArray = [];
 
-let citer = {
-	init: (target) => {
-		citer.createArray();
-		citer.writeToDOM(target);
+
+let webcites = {
+	init: (newSettings) => {
+		//config!
+		let citeSettings = {
+		 target: newSettings.target ? newSettings.target : "#citations",
+		 citicon: newSettings.citicon ? newSettings.citicon : "&#9650;"
+		}
+		console.log("citeSettings");
+		console.log(citeSettings);
+		webcites.createArray();
+		webcites.writeToDOM(citeSettings);
+		
 	},
 	createArray: () => {
+		//grab all the instances of the cite tag
 		const cites = document.querySelectorAll("cite");
-		cites.forEach( (cite) => { 
+		cites.forEach( (cite) => { //fat arrow make jQuery this goof
+			console.log(cite.dataset)
 			let newObj = {
-				date :  citer.checkUndefined(cite.dataset.date) ,
-				dateRetrieved:  citer.checkUndefined(cite.dataset.dateretrieved),
-				title: citer.checkUndefined(cite.dataset.title),
-				sourcename:   citer.checkUndefined(cite.dataset.sourcename),
-				source: citer.checkUndefined(cite.dataset.source),
-				i: i
+				date :  webcites.checkUndefined(cite.dataset.date) ,
+				dateRetrieved:  webcites.checkUndefined(cite.dataset.dateretrieved),
+				title: webcites.checkUndefined(cite.dataset.title),
+				sourcename:   webcites.checkUndefined(cite.dataset.sourcename),
+				source: webcites.checkUndefined(cite.dataset.source),
+				citeCount: citeCount
 			}
-			let duplicate = citer.checkDuplicates(newObj);
+			console.log(newObj);
+			let duplicate = webcites.checkDuplicates(newObj);
 			if (duplicate === false) { //only push new instance if URL is different
-					i = i + 1; //citations do not start at 0 & only update the index for new URLs
-					newObj.i = i;
+					citeCount = citeCount + 1; //citations do not start at 0 & only update the index for new URLs
+					newObj.citeCount = citeCount;
 					citeArray.push(newObj);
 			}
 		});
 	},
 	checkUndefined : (cite) => {
+		// error checks if cite tag doesn't have properties
 		if (cite === undefined) {
 			return "";
 		} else {
 			return cite;
 		}
 	},
-	writeToDOM: (target) => {
+	writeToDOM: (citeSettings) => {
+		// ugly templating, cycles through the array that was created and writes them to the page.
 		let compiledList = "";
 		citeArray.forEach( (instance)  => {
-			
-			const subcite = `<a href="#cite${instance.i}">${instance.i}</a><a name="articleCite${instance.i}"></a>`;
-			
+			const subcite = `<a href="#cite${instance.citeCount}" class="subCite">${instance.citeCount}</a><a name="articleCite${instance.citeCount}"></a>`;
 			if (instance.dateRetrieved !== "" ) {
-				instance.dateRetrieved = "<span class='dateRetrieved'>Date Retreived:</span>" + instance.dateRetrieved;
+				instance.dateRetrieved = "<span class='citeDateRetrieved'>Date Retreived:</span>" + instance.dateRetrieved;
 			}
-			const citation = `<span class="citationItem"> ${instance.i}<a class="upArrow" href="#articleCite${instance.i}">&#9650;</a>  <a href="${instance.source}" target="_blank" id="cite${instance.i}">${instance.title}</a> ${instance.date} ${instance.dateRetrieved}</span>`
+			const citation = `<span class="citeItem"> ${instance.citeCount}<a class="citicon" href="#articleCite${instance.citeCount}">${citeSettings.citicon}</a>  <a href="${instance.source}" target="_blank" id="cite${instance.citeCount}">${instance.title}</a> ${instance.date} ${instance.dateRetrieved}</span>`
 			compiledList = compiledList + citation;
 			document.querySelectorAll(`[data-source="${instance.source}"]`).forEach( (cite)=> { //queryAll creates an array
 				cite.insertAdjacentHTML('beforeend', subcite);
 			});
 		});
-		document.querySelectorAll(target).forEach( (cite)=> { //queryAll creates an array
+		console.log("citeSettings.target" + citeSettings.target);
+		document.querySelectorAll(citeSettings.target).forEach( (cite)=> { //queryAll creates an array
 				cite.insertAdjacentHTML('beforeend', compiledList);
 			});
 	},
 	checkDuplicates: (newObj) => {
+		//makes sure that the citation doesn't already dexist.
     let duplicate = false;
 		citeArray.forEach( (instance) => {
 			if ( instance.source === newObj.source  ) {
@@ -61,3 +75,7 @@ let citer = {
 		return duplicate;
 	}
 }
+webcites.init({
+  //target: "#citations",
+  //citicon: "&#9660;"
+});
