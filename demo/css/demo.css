@@ -10,7 +10,7 @@ html {
   background-color: #222;
   color: #eee;
   font-family: 'Noto Serif SC', serif;
-  line-height: 1.4em;
+  line-height: 1.5em;
   padding-bottom: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -24,6 +24,16 @@ html {
 
 h1 {
   line-height: 1.0em; }
+
+h1 small {
+  font-size: 60%; }
+
+hr {
+  border: 0;
+  border-top: 1px solid grey; }
+
+code {
+  color: lightgreen; }
 
 cite {
   font-size: 11px;
