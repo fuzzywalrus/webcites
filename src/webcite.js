@@ -9,17 +9,14 @@ let webcites = {
 		 target: newSettings.target ? newSettings.target : "#citations",
 		 citicon: newSettings.citicon ? newSettings.citicon : "&#9650;"
 		}
-		console.log("citeSettings");
-		console.log(citeSettings);
 		webcites.createArray();
 		webcites.writeToDOM(citeSettings);
-		
+
 	},
 	createArray: () => {
 		//grab all the instances of the cite tag
 		const cites = document.querySelectorAll("cite");
 		cites.forEach( (cite) => { //fat arrow make jQuery this goof
-			console.log(cite.dataset)
 			let newObj = {
 				date :  webcites.checkUndefined(cite.dataset.date) ,
 				dateRetrieved:  webcites.checkUndefined(cite.dataset.dateretrieved),
@@ -28,7 +25,6 @@ let webcites = {
 				source: webcites.checkUndefined(cite.dataset.source),
 				citeCount: citeCount
 			}
-			console.log(newObj);
 			let duplicate = webcites.checkDuplicates(newObj);
 			if (duplicate === false) { //only push new instance if URL is different
 					citeCount = citeCount + 1; //citations do not start at 0 & only update the index for new URLs
@@ -59,7 +55,6 @@ let webcites = {
 				cite.insertAdjacentHTML('beforeend', subcite);
 			});
 		});
-		console.log("citeSettings.target" + citeSettings.target);
 		document.querySelectorAll(citeSettings.target).forEach( (cite)=> { //queryAll creates an array
 				cite.insertAdjacentHTML('beforeend', compiledList);
 			});
@@ -70,12 +65,8 @@ let webcites = {
 		citeArray.forEach( (instance) => {
 			if ( instance.source === newObj.source  ) {
 				duplicate = true;
-			}	
+			}
  	  });
 		return duplicate;
 	}
 }
-webcites.init({
-  //target: "#citations",
-  //citicon: "&#9660;"
-});

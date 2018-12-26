@@ -1,5 +1,6 @@
 # Web&lt;cite>
 a dependency free, ultra-lightweight, easy to use javascript citation list creator, inspired by Wikipedia.
+[Project site](https://fuzzywalrus.github.io/webcites/)
 
 ## Why?
 

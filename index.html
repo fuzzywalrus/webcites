@@ -12,98 +12,94 @@
 </head>
 
 <body>
+
   <div id="content">
-  	<h1>Making the <code>&lt;cite&gt;</code> tag sane <br> <small>no dependencies</small></h1>
-  Simple citations is a script to generate a list of citations from citations within the the article. Each citation uses the under-utilized <code>&lt;cite&gt;&lt;cite&gt;</code> tag. <cite data-source="https://www.w3schools.com/tags/tag_cite.asp" data-title="w3schools - cite" data-date="10/10/18"></cite>
-
-  	<cite data-source="http://www.google.com"
-  				data-title="google.com"
-  				data-dateRetrieved="12/15/18" ></cite>
-
-  	It can even detect duplicate citings as long as the URL is the same.<cite data-source="https://webkit.org/blog/41/introducing-the-web-inspector/" data-date="01/16/06" data-title="Webkit.org - Introducing the Web Inspector"></cite> Each <code>&lt;cite&gt;</code> tag requires a <code>data-date</code>, <code>data-title</code>, and <code>date-source</code>. Somewhere in the article you will a blank <code>&lt;div&gt;&lt;div&gt;</code> with an identifer (class or ID) for the list of sources to be stashed in. I realize there's far more robust plugins for this, but I wanted something light-weight and easy to manage.
-
-  <h3>Internet Explorer: A Brief History</h3>
-  <p>Internet Explorer (IE) was first released as part of the Plus! add-on package for Windows 95, and then freely available via services packs or downloads, then later bundled in Windows 95 OEM copies with PCs. This tactic was exceptionally effective, as its chief competitor Netscape Navigator (which constituted roughly 80% of the market) was not free and depended on the revenue it generated.
-  <cite data-source="https://www.cnet.com/news/netscape-cuts-prices-on-retail-products" data-date="01/30/98" data-title="Cnet - Netscape cuts prices on retail products"></cite>
-  <cite data-source="https://www.fastcompany.com/27743/nothing-netscape" data-date="10./31/96" data-title="Fast Company - Nothing but Netscape"></cite>
-  Microsoft also emphasized providing a superior experience. Netscape Communicator began earning the reputation as buggy and bloated whereas Microsoft was outpacing Netscape.
-  <cite data-source="https://www.wired.com/2009/09/0928ie-beats-netscape/" data-date="09/28/98" data-title=">Wired - Internet Explorer Leaves Netscape in Its Wake "></cite>
-  <cite data-source="http://www.roughlydrafted.com/RD/RDM.Tech.Q2.07/12C0979F-82C7-4952-898A-55051A2D3897.html" data-date="06/19/07" data-title="Roughlydrafted - Apple in the Web Browser Wars: Netscape vs Internet Explorer"></cite>
-  <cite data-source="https://aplawrence.com/Reviews/netcomm408.html" data-date="01/15/99" data-title="AP Lawerence - Netscape Communicator 4.0.8 (1999)"></cite>
-  Internet Explorer 3 was the first browser with CSS support and added features like Java applets, iframes, ActiveX. Microsoft also created the Javascript feature, XMLHttpRequest (shipping it with IE5 in 1999) allowing for data real-time data transfer (the technology powering AJAX), paving the way for modern web applications.
-  <cite data-source=" https://en.wikipedia.org/wiki/XMLHttpRequest" data-date="" data-title="Wikipedia - XMLHttpRequest"></cite>
-  <cite data-source="https://www.quimbee.com/cases/united-states-v-microsoft-corp" data-date="" data-title="Quimbee - United States v. Microsoft Corp "></cite>
-  </p>
-  <p>1998 was the year of Internet Explorer as several key developments happened:</p>
+  	<h1>Making the <code>&lt;cite&gt;</code> tag sane <br> <small>a dependency free javascript plugin</small></h1>
+  <br>
+  <hr>
   <ul>
-  <li>Microsoft had closed the gap to control nearly half of the market.
-  <cite data-source="https://en.wikipedia.org/wiki/Browser_wars" data-date="" data-title="Wikipedia - Browser Wars "></cite>
-  <cite data-source="https://www.wired.com/2009/09/0928ie-beats-netscape/" data-date="09/28/98" data-title=">Wired - Internet Explorer Leaves Netscape in Its Wake "></cite>
-  </li>
-  <li>Its dominance didn&#39;t stop at Windows either, as part of a negotiation to bring Office to the Mac with the then-struggling Apple, Apple agreed to ship Internet Explorer as its default browser for five years.
-  <cite data-source="https://www.wired.com/2009/08/dayintech-0806/" data-date="08/06/97" data-title="Wired - Apple Rescued By Microsoft"></cite>
-  </li>
-  <li>Netscape was unable to compete and was acquired by AOL for $4.2 billion. However, Netscape unusual step of releasing it&#39;s source code before AOL purchased it.
-  <cite data-source="https://money.cnn.com/1998/11/24/technology/aol/" data-date="11/24/98" data-title="CNN Money - AOL, Netscape"></cite>
-  <cite data-source="https://www.itprotoday.com/windows-8/netscape-releases-communicator-5-source-code" data-date="04/30/98" data-title="IT Pro Today - Netscape releases Communicator 5 source code"></cite>
-  </li>
-  <li>Microsoft&#39;s decision to bundle IE as part of the Windows operating system became a chief issue in the Microsoft Antitrust case, United States v. Microsoft Corp in 1998.
-  <cite data-source="https://www.quimbee.com/cases/united-states-v-microsoft-corp" data-date="" data-title="Quimbee - United States v. Microsoft Corp "></cite>
-  </li>
+    <li><a href="#gettingstarted">Getting Started</a></li>
+    <li><a href="#initializing">Initializing</a></li>
+    <li><a href="#styling">Styling</a></li>
+    <li><a href="#download">Download and/or Fork!</a></li>
   </ul>
-  <p>Despite the legal hurdles, all the reasons mentioned above lead to the inevitable rise of IE, as it was the default web browser for Windows, hitting roughly 95% of the browser market in 2001 with Internet Explorer 6. This would be the high watermark for Microsoft. Microsoft would not release a major update to Internet Explorer for five years.<cite data-source="https://en.wikipedia.org/wiki/Internet_Explorer_version_history#Microsoft_Internet_Explorer_6" data-date="" data-title=">Wikipedia - Internet Explorer Version History"></cite></p>
-  <p>Despite the nearly impossible odds, a collection of developers created the Mozilla Organization open source foundation based on the Netscape codebase, and began updating and improving it, called the Mozilla Suite (an all-in-one browser/e-mail client), paying particular attention to standards, accessibility, and cross-platform ports. In 2002, a stripped down fork of the Mozilla Suite, Phoenix a none-too-subtle reference to Netscape, kicking off what would be referred to as the Second Browser War.
-  <cite data-source="https://en.wikipedia.org/wiki/Browser_wars" data-date="" data-title="Wikipedia - Browser Wars"></cite>
-  <cite data-source=" https://www.mozilla.org/en-US/about/history/details/" data-date="" data-title="Mozilla - History"></cite>
-  Phoenix would later change its name to FireBird after a trademark dispute in 2003 and ultimately landed on FireFox in 2004.
-  <cite data-source="https://www-archive.mozilla.org/projects/firefox/charter.html<" data-date="11/24/04" data-title="Mozilla - Mozilla Firefox Development Charter"></cite>
-  The success of FireFox hinged on providing a superior experience with novel features such as popularizing tabbed browsing, pop-up blocking, privacy mode, phishing protection, frequent incremental updates, built-in search bar, easily installed plugins, theming, cross-platform support, adherence to open standards, speed and security.</p>
-  <p>Also adding to the mix, a rejuvenated Apple entered the fray in 2002, forking the Linux browser Konqueror&#39;s codebase, KHTML, naming its open-source project Webkit. Apple released the beta it&#39;s WebKit based browser, Safari for download shortly after. Free from its contract with Microsoft, Apple began bundling it with Mac OS X 10.3. Microsoft curtly discontinued Internet Explorer for Mac OS X, again doubling down on its five-year hiatus from any new Internet Explorer updates.
-  <cite data-source="https://www.macworld.com/article/1024898/explorer.html" data-date="06/13/03" data-title="MacWorld - Microsoft drops development of Internet Explorer for Mac"></cite>
-  Internet Explorer would never be ported to any Mac operating system again.</p>
-  <p>Despite the competition and lack of engagement, Internet Explorer still maintained a healthy market dominance, controlling roughly 70% for most of the decade with FireFox as its chief competitor.
-  <cite data-source="https://en.wikipedia.org/wiki/Browser_wars" data-date="" data-title="Wikipedia - Browser Wars"></cite>
-  </p>
-  <p>In 2007, Apple released the iPhone which sported a first for a phone: Safari, a fully functional web browser, earning the Microsoft&#39;s CEO Steve Balmer would famously laugh at the iPhone.
-  <cite data-source="https://bgr.com/2016/11/04/ballmer-iphone-quote-explained/" data-date="11/04/16" data-title="BGR - Steve Ballmer finally explains why he thought the iPhone would be a flop"></cite>
-  Microsoft&#39;s Windows Phone failed even to capture a fraction of the market, effectively stranding Internet Explorer as a desktop only browser.
-  <cite data-source="https://www.recode.net/2017/7/17/15984222/microsoft-windows-phone-mobile-operating-system-android-iphone-ios" data-date="7/17/17" data-title="Recode - Closing the books on Microsoft&rsquo;s Windows Phone"></cite>
-  </p>
-  <p>Adding insult to injury, it took Microsoft roughly two and half years to release Internet Explorer 8, after 7. A lot had changed between the years of mid-2006 and 2009.</p>
-  <p>In 2010, Google started heavily marketing it&#39;s Google Chrome browser. Google&#39;s Chrome browser was initially based off of Webkit (later be forked in 2013, naming its engine Blink and its open-source version called Chromium) wrestling market dominance away from Microsoft in two short years, something FireFox was never able to do.
-  <cite data-source="https://searchengineland.com/google-advertises-chrome-on-bing-36865" data-date="02/25/10" data-title="SearchEngineLand - Google Advertises Chrome on Bing"></cite>
-  </p>
-  <p>Finally, after suffering for years, Microsoft went back to the drawing board and re-engineered Internet Explorer, removing legacy support and reworking its rendering engine. By most intents and purposes, Edge was a capable browser often boasting reaching compatibility milestones before some of its competitors but failed to be embraced by users and still had a reputation of being a laggard.
-  <cite data-source="https://blogs.windows.com/msedgedev/2015/05/12/javascript-moves-forward-in-microsoft-edge-with-ecmascript-6-and-beyond/#5c0ow25FRe5Jpse9.97" data-date="05/12/15" data-title="Windows Blogs - JavaScript moves forward in Microsoft Edge with ECMAScript 6 and beyond"></cite>
-  </p>
-  <h3>Not all web browsers are created equal.</h3>
-  <p>The by-product of the browser wars was creating bodies such as the Internet Society (ISOC) in 1992, World Wide Web Consortium (W3C) in 1994, Web Hypertext Application Technology Working Group (WHATWG) in 2004. These bodies helped outline the functionality requirements of a web browser. The collaborative nature of open-standards allowed the internet as we know it to exist, and more importantly, evolve.</p>
-  <p>Also as public exposure to the internet increased, so did the general public&#39;s understanding of how the internet worked. A vast bulk of users became aware a web browser affects one&#39;s experience, even if only acutely so. Web browsers are surprisingly complex as they must interpret multiple sets of core-technologies: HTML, CSS, Javascript, a diverse range of media (images, video, audio, fonts) and APIs like Canvas, Microdata, Cookies/Web Storage, Geolocation, Web Cryptography, WebRTC, WebGL and so on.</p>
-  <p>A browser&#39;s ability to perform all these tasks, support the latest and greatest meanwhile providing security and stability has been a monumental challenge.</p>
-  <p>Internet Explorer&#39;s meteoric rise was in part that early versions of Internet Explorer were as good and arguably better than its competition and it&#39;s fall entirely hinged Microsoft&#39;s wanton disregard for keeping up with the evolving standards or improving its user experience.</p>
-  <h3>Cross-Browser Compatibility</h3>
-  <p>With Internet Explorer&#39;s infrequent updates, it became the bane of both developers and ordinary users. Internet Explorer earned a well-deserved reputation for being developer unfriendly, for a myriad of problems:</p>
-  <ol>
-  <li>Tying browser updates to the Operating System - It&#39;s hard to overstate how big of a problem this became. Users often clung to outdated versions of Windows such as Windows XP and often refusing to update to the latest service packs.</li>
-  <li>Poor developer tools - Internet Explorer didn&#39;t have a sensible &quot;inspect element&quot; although IE11 made this considerably better. It also was buggy, failing to allow live changes in earlier versions, and has arbitrary limitations. It was impossible to have more than one version of Internet Explorer on Windows. IE11 introduced emulation modes that were inconsistent.</li>
-  <li>Glacial adoptions of standards - IE infamously did not support CSS graphic-effects like rounded corners until 2011 (whereas it&#39;s competitors had this as early as 2006). It did not support javascript commands like querySelector until 2011 whereas Safari and Firefox supported this in 2008/2009 ).</li>
-  <li>Proprietary Technology/Non-standard implementations - Microsoft forwarded a poor choices, such as ActiveX, VML, HTML+TIME</li>
-  <li>Available only on Windows - web developers embraced *nix based operating systems like Linux variants or Mac OS X (Unix) making testing a hassle, depending on annoying solutions.</li>
-  <li>Security risks - Some of the blame for IE&#39;s security can be blamed squarely on Microsoft (Active X was a security nightmare) and some for being the most popular browser on the most popular OS. Bugs are inevitable. Patches are too. Microsoft&#39;s slow response could have been improved.</li>
-  </ol>
-  <p>Both Internet Explorer and Edge have been and still are pain points. This is especially felt in projects that cater to user-bases with disproportionately high usage of Internet Explorer or Edge, such as corporate environment, certain foreign markets, or niche demographics.</p>
-  <p>This placed a lot of additional testing and development on Internet Explorer and gave rise to a host of solutions like jQuery, Modernizr, HeadJS, and various &quot;shims&quot; or polyfills to either bring like-functionality across browsers or directly to Internet Explorer.</p>
-  <p>Worse, as the web development community moved towards developers favoring *nix operating systems (macOS and Linux variants) it meant testing Internet Explorer became increasingly cumbersome without a way natively test it. Since Internet Explorer commanded a sizable portion of the market share, developers were at the mercy of Microsoft. Even in mid-2012, when Google Chrome surpassed Internet Explorer as the most popular browser, it still commanded roughly 1/3 of the market.</p>
-  
+  <hr>
+  <br>
+
+  <h3>Why?</h3>
+  <p>After investigating several javascript solutions for generating citations/references, I found some exceptionally powerful citation  that adhered to academic formats like (AMA, Chicago, JM) but none that generated simple Wikipedia-esq lists of inline citations, hencewhich Webcites.js was created.. </p>
+  <p>Simple citations is a script to generate a list of citations from cites within the the article for a lightweight, simple and easy-to-use. Each citation uses the under-utilized <code>&lt;cite&gt;&lt;cite&gt;</code> tag. <cite data-source="https://www.w3schools.com/tags/tag_cite.asp" data-title="w3schools - cite" data-date="10/10/18"></cite></p>
 
 
+  	It can even detect duplicate citings as long as the URL is the same. <cite data-source="https://www.w3schools.com/tags/tag_cite.asp" data-title="w3schools - cite" data-date="10/10/18"></cite> <cite data-source="https://webkit.org/blog/41/introducing-the-web-inspector/" data-date="01/16/06" data-title="Webkit.org - Introducing the Web Inspector"></cite></p>
+
+    <p>Each <code>&lt;cite&gt;</code> tag requires <code>data-title</code>, and <code>date-source</code>, with optional tags for <code>data-date</code>, <code>data-source</code>, <code>data-sourcename</code> and <code>data-dateretreived</code>.</p>
+
+    <p> <code>&lt;div&gt;&lt;div&gt;</code> with an identifer (class or ID) for the list of sources to be stashed in.</p>
+
+  <br><br>
+  <a name="gettingstarted"></a>
+  <h2>Getting Started</h2>
+    <hr>
+  <p>In the body of your HTML, you'll need to add citation marks. The citation number will be rendered inside the tags. Only two tags are required per citation. <code>data-title</code>, and <code>date-source</code></p>
+  <h4>Example</h4>
+  <code>
+  &lt;cite data-source="https://www.cnet.com/news/netscape-cuts-prices-on-retail-products" data-date="01/30/98" data-title=" Netscape cuts prices on retail products" data-sourcename="Cnet.com" data-dateretrieved="11/01/18"&gt;&lt;/cite&gt;
+  </code>
+  <br><br>
+  <a name="initializing"></a>
+  <h3>Initializing</h3>
+  <p>By default the script targets a div with the ID of "#citations", and by default uses the unicode character, Black Up-Pointing Triangle <code>&#9650;</code> in the citation list as an anchor link back to the post</p>
+  <code>
+    citer.init();
+  </code>
+  <p>This can be changed by passing in an object with a new target.</p>
+  <h4>Example</h4>
+  <code>
+    citer.init({<br>
+    &nbsp;&nbsp;target: ".mydestination",<br>
+    &nbsp;&nbsp;citicon: "&lt;img src="link/to/image.png"&gt;"<br>
+    });
+  </code>
+  <br><br><br><br>
+  <a name="styling"></a>
+
+  <h2>Styling</h2>
+  <hr>
+  <p>Webcites allows easy CSS styling for custom looks and feels for your blog/article/website/webapp.</p>
+
+  <h4>Inline citations</h4>
+  <p>Each inline citation uses the cite tag which can be style via CSS. Inside each citation is a class of <code>.subCite</code></p>
+  <h4>Citations/References list</h4>
+  <p>Each citation has a class of <code>.citeItem</code>. Within each <code>.citeItem</code> is the following:</p>
+  <ul>
+    <li><code>.citicon</code> - surrounds the anchor icon.</li>
+    <li><code>#cite<i>NUMBER</i></code> - surrounds the reference anchor (can be styled using starts with).</li>
+  </ul>
+  <br><br><br><br>
+  <a name="download"></a>
+  <h2>Download and/or Fork!</h2>
+  <hr>
+  <p>The source code is avaliable on <a href="https://github.com/fuzzywalrus/webcites">GitHub</a> as well as the full documentation or can be downloaded in a <a href="https://github.com/fuzzywalrus/webcites/archive/master.zip">zip file</a> .</p>
+
+  <br><br>
+  <h2>Other projects</h2>
+  <hr>
+  <p>Shameless plugs for a few of my other projects:</p>
+  <p><a href="http://cssfiltergenerator.com">cssfiltergenerator.com</a> - a CSS3 Filter Generator (advertisement free)</p>
+  <p><a href="http://blog.greggant.com">blog.greggant.com</a> - my personal blog.</p>
+
+  <h3>Citations/References</h3>
   <div id="citations"></div>
   </div>
 
 
 </body>
-<<script type="text/javascript" src="dist/webcite.min.js">
-
+<script type="text/javascript" src="dist/webcite.min.js"></script>
+<script>
+  webcites.init({
+    target: "#citations",
+    //citicon: "&#9660;"
+  });
 </script>
-
 </html>
